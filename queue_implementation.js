@@ -12,21 +12,29 @@ class Queue{
         this.length = 0;
     }
     dequeue(){
-
+        if(this.length === 0){
+            return null;
+        }
+        if( this.top === this.bottom){
+            this.last = null;
+        }
+        this.first = this.first.next;
+        this.length--;
     }
     enqueue(value){
-        const newNode = new Node()
-        newNode.value = value;
-        newNode.next = this.top;
+        const newNode = new Node(value);
         if (this.length === 0){
-            this.top = newNode;
-            this.bottom = newNode;
+            this.first = newNode;
+            this.last = newNode;
         } else {
-            this.top = newNode;
+            this.last.next = newNode;
+            this.last = newNode;
         }
-        
+        this.length++;
+        return this;
     }
     peek(){
         console.log(this.top);
     }
 }
+const myQueue = new Queue();
