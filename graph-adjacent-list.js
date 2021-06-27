@@ -21,7 +21,7 @@ class Graph{
             for (vertex of nodeConnections){
                 connections += vertex + " ";
             }
-            console.log(node + "--->" + connections);
+            console.log(node + " ---> " + connections);
         }
     } 
 }
