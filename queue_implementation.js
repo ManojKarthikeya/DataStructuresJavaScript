@@ -5,6 +5,7 @@ class Node{
     }
 }
 
+
 class Queue{
     constructor(){
         this.top = null;
